@@ -98,27 +98,29 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            
+                            {% for employee in employees %}
+                                
+                                    <tr>
                                 <th scope="row" class="ps-4">
                                     <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
                                                                                 id="contacusercheck1"/><label
                                             class="form-check-label" for="contacusercheck1"></label></div>
                                 </th>
                                 <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Simon
-                                    Ryles</a></td>
-                                <td><span class="badge badge-soft-success mb-0">Full Stack Developer</span></td>
+                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">{{ employee.name }}</a></td>
+                                <td><span class="badge badge-soft-success mb-0">{{ employee.position }}</span></td>
                                 <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
                                        data-cfemail="75261c181a1b270c19100635181c1b1c1719105b161a18">[email&#160;protected]</a>
                                 </td>
-                                <td>125</td>
+                                <td>{{ employee.projects }}</td>
                                 <td>
                                     <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
+                                        <li class="list-inline-item"><a href="{%url 'index' employee.pk%}"
                                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                                         title="Edit" class="px-2 text-primary"><i
                                                 class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
+                                        <li class="list-inline-item"><a href="{% url 'delete_employee' employee.pk%}"
                                                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                                                         title="Delete" class="px-2 text-danger"><i
                                                 class="bx bx-trash-alt font-size-18"></i></a></li>
@@ -134,301 +136,10 @@
                                     </ul>
                                 </td>
                             </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck2"/><label
-                                            class="form-check-label" for="contacusercheck2"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Marion
-                                    Walker</a></td>
-                                <td><span class="badge badge-soft-info mb-0">Frontend Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="9fd2feedf6f0f1c8fef3f4faeddff2f6f1f6fdf3fab1fcf0f2">[email&#160;protected]</a>
-                                </td>
-                                <td>132</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck3"/><label
-                                            class="form-check-label" for="contacusercheck3"></label></div>
-                                </th>
-                                <td>
-                                    <div class="avatar-sm d-inline-block me-2">
-                                        <div class="avatar-title bg-soft-primary rounded-circle text-primary"><i
-                                                class="mdi mdi-account-circle m-0"></i></div>
-                                    </div>
-                                    <a href="#" class="text-body">Frederick White</a></td>
-                                <td><span class="badge badge-soft-danger mb-0">UI/UX Designer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="f3b581969796819a9098a49b9a8796b39e9a9d9a919f96dd909c9e">[email&#160;protected]</a>
-                                </td>
-                                <td>112</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck4"/><label
-                                            class="form-check-label" for="contacusercheck4"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Shanon
-                                    Marvin</a></td>
-                                <td><span class="badge badge-soft-primary mb-0">Backend Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="d380bbb2bdbcbd9eb2a1a5babd93bebabdbab1bfb6fdb0bcbe">[email&#160;protected]</a>
-                                </td>
-                                <td>121</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck5"/><label
-                                            class="form-check-label" for="contacusercheck5"></label></div>
-                                </th>
-                                <td>
-                                    <div class="avatar-sm d-inline-block me-2">
-                                        <div class="avatar-title bg-soft-primary rounded-circle text-primary"><i
-                                                class="mdi mdi-account-circle m-0"></i></div>
-                                    </div>
-                                    <a href="#" class="text-body">Mark Jones</a></td>
-                                <td><span class="badge badge-soft-info mb-0">Frontend Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="4b062a39200124252e380b2622252229272e65282426">[email&#160;protected]</a>
-                                </td>
-                                <td>145</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Edit</a><a
-                                                    class="dropdown-item" href="#">Action</a><a class="dropdown-item"
-                                                                                                href="#">Remove</a>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck6"/><label
-                                            class="form-check-label" for="contacusercheck6"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Janice
-                                    Morgan</a></td>
-                                <td><span class="badge badge-soft-primary mb-0">Backend Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="29634847404a4c64465b4e484769444047404b454c074a4644">[email&#160;protected]</a>
-                                </td>
-                                <td>136</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck7"/><label
-                                            class="form-check-label" for="contacusercheck7"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Patrick
-                                    Petty</a></td>
-                                <td><span class="badge badge-soft-danger mb-0">UI/UX Designer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="44142530362d272f142130303d04292d2a2d2628216a272b29">[email&#160;protected]</a>
-                                </td>
-                                <td>125</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck8"/><label
-                                            class="form-check-label" for="contacusercheck8"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Marilyn
-                                    Horton</a></td>
-                                <td><span class="badge badge-soft-primary mb-0">Backend Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="d79ab6a5bebbaeb99fb8a5a3b8b997babeb9beb5bbb2f9b4b8ba">[email&#160;protected]</a>
-                                </td>
-                                <td>154</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th scope="row" class="ps-4">
-                                    <div class="form-check font-size-16"><input type="checkbox" class="form-check-input"
-                                                                                id="contacusercheck9"/><label
-                                            class="form-check-label" for="contacusercheck9"></label></div>
-                                </th>
-                                <td><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt
-                                         class="avatar-sm rounded-circle me-2"/><a href="#" class="text-body">Neal
-                                    Womack</a></td>
-                                <td><span class="badge badge-soft-success mb-0">Full Stack Developer</span></td>
-                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                       data-cfemail="b2fcd7d3dee5dddfd3d1d9f2dfdbdcdbd0ded79cd1dddf">[email&#160;protected]</a>
-                                </td>
-                                <td>231</td>
-                                <td>
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Edit" class="px-2 text-primary"><i
-                                                class="bx bx-pencil font-size-18"></i></a></li>
-                                        <li class="list-inline-item"><a href="javascript:void(0);"
-                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                                                        title="Delete" class="px-2 text-danger"><i
-                                                class="bx bx-trash-alt font-size-18"></i></a></li>
-                                        <li class="list-inline-item dropdown"><a
-                                                class="text-muted dropdown-toggle font-size-18 px-2" href="#"
-                                                role="button" data-bs-toggle="dropdown" aria-haspopup="true"><i
-                                                class="bx bx-dots-vertical-rounded"></i></a>
-                                            <div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item"
-                                                                                            href="#">Action</a><a
-                                                    class="dropdown-item" href="#">Another action</a><a
-                                                    class="dropdown-item" href="#">Something else here</a></div>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
+                            {% endfor %}
+                            
+
+
                             </tbody>
                         </table>
                     </div>

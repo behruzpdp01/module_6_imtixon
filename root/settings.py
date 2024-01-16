@@ -1,13 +1,13 @@
-import os
+import os.path
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-90$swb^b=8fkbya07x7*ij_1a#z9wb#ly_)_m&6bk*wzk9444d'
+SECRET_KEY = 'django-insecure-%4*jjdbl$&numn&5=$^9^337o=+h((@c(+n!5@y9^lv5j1+#9$'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -16,7 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps',
+    'apps'
 ]
 
 MIDDLEWARE = [
@@ -29,7 +29,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = ('root.urls')
+ROOT_URLCONF = 'root.urls'
 
 TEMPLATES = [
     {
@@ -50,6 +50,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'root.wsgi.application'
 
+AUTH_USER_MODEL = 'apps.User'
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
@@ -60,6 +62,7 @@ DATABASES = {
         'PORT': 5432
     }
 }
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
